@@ -132,3 +132,26 @@ export const signOutAction = async () => {
   await supabase.auth.signOut();
   return redirect("/sign-in");
 };
+
+export const signInWithGoogle = async () => {
+  const supabase = await createClient();
+  const origin = (await headers()).get("origin");
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${origin}/auth/callback`,
+    },
+  });
+
+  if (error) {
+    console.error(error);
+    return encodedRedirect(
+      "error",
+      "/sign-in",
+      "Google 로그인 중 오류가 발생했습니다."
+    );
+  }
+
+  return redirect(data.url);
+};
