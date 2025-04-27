@@ -7,7 +7,7 @@ export default function GoogleSignInButton() {
     <button
       type="button"
       onClick={() => signInWithGoogle()}
-      className="w-full p-2 mb-4 border rounded-md flex items-center justify-center gap-2 hover:bg-gray-50"
+      className="w-full p-2 mb-4 border rounded-md flex items-center justify-center gap-2 hover:bg-gray-50 hover:text-gray-700 transition-colors duration-200 ease-in-out"
     >
       <svg className="w-5 h-5" viewBox="0 0 24 24">
         <path
@@ -27,7 +27,7 @@ export default function GoogleSignInButton() {
           d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
         />
       </svg>
-      Google로 로그인
+      Google Sign In
     </button>
   );
 }

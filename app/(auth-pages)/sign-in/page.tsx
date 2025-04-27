@@ -11,17 +11,6 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
   return (
     <form className="flex-1 flex flex-col min-w-64">
       <h1 className="text-2xl font-medium">Sign in</h1>
-      
-      <GoogleSignInButton />
-
-      <div className="relative my-4">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-gray-500">또는</span>
-        </div>
-      </div>
 
       {/* 기존 로그인 폼 */}
       <p className="text-sm text-foreground">
@@ -52,6 +41,17 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
           Sign in
         </SubmitButton>
         <FormMessage message={searchParams} />
+
+        <div className="relative my-4">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="px-2 text-gray-500">or</span>
+          </div>
+        </div>
+
+        <GoogleSignInButton />
       </div>
     </form>
   );
