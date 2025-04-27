@@ -15,12 +15,12 @@ cd my-app
 - Tailwind CSS: ✅
 - `src/` directory: ❌
 - App Router: ✅
-- Import alias: ✅
+- Import alias: ❌
 
 ## 2. 프로젝트 구조
 
 ```
-my-app/
+/
 ├── app/
 │   ├── (auth)/
 │   │   ├── sign-in/
